@@ -4,11 +4,14 @@ version = "0.0.1"
 description = "Just a test repo for me to test releases on."
 authors = ["Bilbottom"]
 readme = "README.md"
-packages = [{include = "src"}]
+packages = [{include = "release_test"}]
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+release-testing = 'release_test:main'
 
 [tool.poetry.dependencies]
 python = "^3.11"
