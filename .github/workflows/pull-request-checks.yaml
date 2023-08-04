@@ -19,3 +19,7 @@ jobs:
       - uses: danger/python@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm install -g danger
+          pip install danger-python
+          danger-python ci
