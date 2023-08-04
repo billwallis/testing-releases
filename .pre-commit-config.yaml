@@ -1,4 +1,6 @@
 ---
+default_stages: [commit]
+
 repos:
   - repo: meta
     hooks:
