@@ -7,7 +7,7 @@ def main() -> None:
     """
     Run the test scripts.
     """
-    print("Qapla'!")
+    print("Qapla'! This is Klingon for 'success'.")
 
 
 if __name__ == "__main__":
