@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
     branches: [release]
-    paths: ["src/**"]
+    paths: ["testing_releases/**"]
 
 jobs:
   release:
