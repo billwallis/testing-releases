@@ -5,7 +5,7 @@ run-name: publish-release
 on:
   workflow_dispatch:
   push:
-    branches: [release]
+    branches: [main]
 
 jobs:
   release:
