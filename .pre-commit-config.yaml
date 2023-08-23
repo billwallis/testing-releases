@@ -1,6 +1,6 @@
 ---
 ci:
-  skip: [poetry-lock, sourcery, pylint, pytest, coverage-badge]
+  skip: [poetry-lock]
 
 default_install_hook_types: [pre-commit, commit-msg]
 default_stages: [pre-commit]
