@@ -4,9 +4,6 @@ run-name: publish-release
 
 on:
   workflow_dispatch:
-  push:
-    branches: [release]
-    paths: ["testing_releases/**"]
 
 jobs:
   release:
