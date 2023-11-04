@@ -34,6 +34,6 @@ profile = "black"
 version_variables = ["pyproject.toml:tool.poetry.version"]
 
 [tool.semantic_release.branches.main]
-match = "release"
+match = "main"
 prerelease_token = "rc"
 prerelease = false
