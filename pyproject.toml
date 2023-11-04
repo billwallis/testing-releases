@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "testing_releases"
-version = "0.1.0"
+version = "0.1.1"
 description = "Just a test repo for me to test releases on."
 authors = ["Bilbottom"]
 readme = "README.md"
@@ -31,9 +31,26 @@ testpaths = [
 profile = "black"
 
 [tool.semantic_release]
-version_variables = ["pyproject.toml:tool.poetry.version"]
+#version_variables = ["pyproject.toml:tool.poetry.version"]
+version_toml = ["pyproject.toml:tool.poetry.version"]
 
 [tool.semantic_release.branches.main]
 match = "main"
 prerelease_token = "rc"
 prerelease = false
+
+[tool.semantic_release.commit_parser_options]
+allowed_tags = [
+    "build",
+    "chore",
+#    "ci",
+    "docs",
+    "feat",
+    "fix",
+    "perf",
+    "refactor",
+    "style",
+    "test",
+]
+minor_tags = ["feat"]
+patch_tags = ["fix", "perf"]
