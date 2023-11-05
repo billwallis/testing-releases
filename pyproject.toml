@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "testing_releases"
-version = "0.1.1"
+version = "0.1.0"
 description = "Just a test repo for me to test releases on."
 authors = ["Bilbottom"]
 readme = "README.md"
