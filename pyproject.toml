@@ -38,7 +38,11 @@ commit_message = "chore(release): {version}"
 major_on_zero = false  # For development only, remove after v1.0.0
 
 [tool.semantic_release.changelog]
-exclude_commit_patterns = ["^\\[pre-commit\\.ci\\].*"]
+exclude_commit_patterns = [
+    "^\\d\\.\\d\\.\\d",  # The default semantic release pattern
+    "^\\[pre-commit\\.ci\\]",  # Pre-commit CI commits
+    "^(Revert|Merge)",  # Revert and merge commits
+]
 
 [tool.semantic_release.branches.main]
 match = "main"
