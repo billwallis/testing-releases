@@ -35,8 +35,12 @@ profile = "black"
 
 
 [tool.semantic_release]
-#version_variables = ["pyproject.toml:tool.poetry.version"]
 version_toml = ["pyproject.toml:tool.poetry.version"]
+commit_message = "chore(release): {version}"
+major_on_zero = false  # For development only, remove after v1.0.0
+
+[tool.semantic_release.changelog]
+exclude_commit_patterns = ["^\\[pre-commit\\.ci\\].*"]
 
 [tool.semantic_release.branches.main]
 match = "main"
@@ -47,7 +51,6 @@ prerelease = false
 allowed_tags = [
     "build",
     "chore",
-#    "ci",
     "docs",
     "feat",
     "fix",
@@ -56,5 +59,6 @@ allowed_tags = [
     "style",
     "test",
 ]
-minor_tags = ["feat"]
+major_tags = [":boom:"]
+minor_tags = ["feat", ":sparkles:"]
 patch_tags = ["fix", "perf"]
