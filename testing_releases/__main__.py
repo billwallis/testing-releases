@@ -9,6 +9,7 @@ def main() -> None:
     """
     print("Qapla'! This is Klingon for 'success'!")
     print("Bingo! The thing went well!")
+    print("👋🦾")
 
 
 if __name__ == "__main__":
