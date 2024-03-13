@@ -1,6 +1,7 @@
 ---
 ci:
   skip: [poetry-lock]
+  autoupdate_schedule: quarterly
 
 default_install_hook_types: [pre-commit, commit-msg]
 default_stages: [pre-commit]
