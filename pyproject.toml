@@ -18,6 +18,7 @@ testing-releases = 'testing_releases:main'
 python = "^3.11"
 
 [tool.poetry.group.test.dependencies]
+danger-python = "^0.1.0"
 pre-commit = "^3.0.0"
 pytest = "^7.0.0"
 pytest-cov = "^4.0.0"
