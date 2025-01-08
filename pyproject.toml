@@ -1,39 +1,40 @@
+[project]
+name = "testing_releases"
+version = "0.2.0"
+description = "Just a test repo for me to test releases on."
+authors = [{name = "Bilbottom"}]
+readme = "README.md"
+packages = [{include = "testing_releases"}]
+requires-python = ">=3.11"
+dynamic = ["dependencies"]
+
+[project.scripts]
+testing-releases = 'testing_releases:main'
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 
-[tool.poetry]
-name = "testing_releases"
-version = "0.2.0"
-description = "Just a test repo for me to test releases on."
-authors = ["Bilbottom"]
-readme = "README.md"
-packages = [{include = "testing_releases"}]
+[tool.poetry.group]
+dev.optional = false
+test.optional = false
 
-[tool.poetry.scripts]
-testing-releases = 'testing_releases:main'
-
-[tool.poetry.dependencies]
-python = "^3.11"
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.0.0"
 
 [tool.poetry.group.test.dependencies]
-pre-commit = "^3.0.0"
 pytest = "^7.0.0"
 pytest-cov = "^4.0.0"
 
 
 [tool.pytest.ini_options]
-addopts = "--cov=src"
+addopts = "--cov=testing_releases"
 testpaths = ["tests"]
 
 
-[tool.isort]
-profile = "black"
-
-
 [tool.semantic_release]
-version_toml = ["pyproject.toml:tool.poetry.version"]
+version_toml = ["pyproject.toml:project.version"]
 commit_message = "chore(release): {version}"
 major_on_zero = false  # For development only, remove after v1.0.0
 
