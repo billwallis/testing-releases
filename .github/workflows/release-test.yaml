@@ -36,4 +36,4 @@ jobs:
         with:
           name: python-package-distributions
           path: dist/
-      - run: uv publish --trusted-publishing always --index testpypi
+      - run: uv publish --index testpypi --token ${{ secrets.TEST_PYPI_TOKEN }}
