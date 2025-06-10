@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "testing_releases"
 version = "0.3.0"
 description = "Just a test repo for me to test releases on."
-authors = [{name = "Bilbottom"}]
+authors = [{name = "billwallis"}]
 readme = "README.md"
 requires-python = ">=3.11"
 dynamic = ["dependencies"]
