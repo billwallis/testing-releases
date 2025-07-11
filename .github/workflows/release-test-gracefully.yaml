@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 ---
-name: Publish Release (uv workaround)
-run-name: publish-release-uv-workaround
+name: Publish Release (graceful test)
+run-name: publish-release-graceful-test
 
 on:
   workflow_dispatch:
@@ -34,7 +34,6 @@ jobs:
         with:
           name: python-package-distributions
           path: dist/
-      - run: uv publish --index testpypi --token ${{ secrets.TEST_PYPI_TOKEN }}
       - run: |
           out=$(uv publish --index testpypi --token ${{ secrets.TEST_PYPI_TOKEN }} 2>&1)
           exitcode=$?
