@@ -38,7 +38,7 @@ jobs:
       - run: |
           out=$(uv publish --index testpypi --token ${{ secrets.TEST_PYPI_TOKEN }} 2>&1)
           exitcode=$?
-          
+
           if [[ $exitcode -eq 0 ]]; then
             echo "$out"
           elif [[ $out == "Publishing "*" files https://test.pypi.org/legacy/"*"error: Local file and index file do not match"* ]]; then
