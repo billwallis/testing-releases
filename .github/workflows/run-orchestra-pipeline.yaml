@@ -3,7 +3,7 @@ name: run-orchestra-pipeline
 on:
   workflow_dispatch:
   pull_request:
-    paths: ["seeds/**/*"]
+    paths: ["seeds/**"]
 
 concurrency:
   group: ${{ github.workflow }}
