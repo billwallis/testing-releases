@@ -1,0 +1,15 @@
+name: run-orchestra-pipeline
+
+on: ["workflow_dispatch", "pull_request"]
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+      - name: Run pipeline
+        uses: orchestra-hq/run-pipeline@v1
+        with:
+          api_key: ${{ secrets.ORCHESTRA_API_KEY }}
+          pipeline_id: dfca15a3-668b-448c-93e7-c76490da67e3
