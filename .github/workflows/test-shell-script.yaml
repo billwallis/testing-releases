@@ -7,16 +7,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      #      - uses: actions/setup-python@v6
-      #        with: { python-version: "3.11" }
-      #      - run: pip install -r requirements.txt
+      - uses: actions/setup-python@v6
+        with: { python-version: "3.11" }
+      - run: pip install -r requirements.txt
       - run: echo 'feature' > feature.txt
       - run: git status
       - uses: actions/upload-artifact@v4
         with:
           name: feature-thingy
           path: feature.txt
-      - run: python3 -c "print('ba-ba-booey')"
+      - run: pytest --version
 
       - uses: actions/checkout@v6
         with: { ref: main }
@@ -32,7 +32,7 @@ jobs:
         with:
           name: main-thingy
           path: main.txt
-      - run: python3 -c "print('ba-ba-booey')"
+      - run: pytest --version
 
       - uses: actions/checkout@v6
       - run: git status
@@ -45,4 +45,4 @@ jobs:
           name: main-thingy
           path: main.txt
       - run: git status
-      - run: python3 -c "print('ba-ba-booey')"
+      - run: pytest --version
