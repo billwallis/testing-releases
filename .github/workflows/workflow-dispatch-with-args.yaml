@@ -5,7 +5,7 @@ on:
     inputs:
       foo: {type: boolean, default: true,  description: foo}
       bar: {type: boolean, default: false, description: bar}
-  pull_request:
+#  pull_request:
 
 jobs:
   do-a-thing:
