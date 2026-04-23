@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+---
+on:
+  workflow_dispatch:
+    inputs:
+      foo: {type: boolean, default: true,  description: foo}
+      bar: {type: boolean, default: false, description: bar}
+  pull_request:
+
+jobs:
+  do-a-thing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print inputs
+        run: |
+          echo foo=${{ inputs.foo }}
+          echo bar=${{ inputs.bar }}
+          echo ${{ github.event_name }}
+      - name: Print if foo
+        if: ${{ inputs.foo || github.event_name == 'pull_request' }}
+        run: echo foo=${{ inputs.foo }}
+      - name: Print if bar
+        if: ${{ inputs.bar }}
+        run: echo bar=${{ inputs.bar }}
