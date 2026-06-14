@@ -1,6 +1,5 @@
 # dev
-pre-commit>=4.1.0
+pre-commit>=4.6.0
 
 # test
 pytest>=9.0.3
-pytest-cov>=6.0.0
