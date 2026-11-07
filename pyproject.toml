@@ -18,16 +18,6 @@ scripts.testing-releases = "testing_releases:main"
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
 
-[tool.setuptools.packages.find]
-include = ["testing_releases"]
-
-
-[[tool.uv.index]]
-name = "testpypi"
-url = "https://test.pypi.org/simple/"
-publish-url = "https://test.pypi.org/legacy/"
-explicit = true
-
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
